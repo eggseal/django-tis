@@ -22,7 +22,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
       <div class="container">
-        <a class="navbar-brand" href="#">Online Store</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Online Store</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -36,8 +36,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link active" href="#">About</a>
+            <a class="nav-link active" href="{% url 'home' %}">Home</a>
+            <a class="nav-link active" href="{% url 'about' %}">About</a>
+            <a class="nav-link active" href="{% url 'products' %}">Products</a>
+            <a class="nav-link active" href="{% url 'form' %}">Create Product</a>
+            <a class="nav-link active" href="{% url 'contacts' %}">Contact</a>
           </div>
         </div>
       </div>
