@@ -77,12 +77,27 @@ class ProductCreateView(View):
     def post(self, request):
         form = ProductForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect(reverse('products'))
+            name = form.cleaned_data['name']
+            price = form.cleaned_data['price']
+            Product.products.append({
+                "id": len(Product.products) + 1,
+                "name": name,
+                "price": price,
+                "description": "One of the products of all time"
+            })
+            return HttpResponseRedirect(reverse('success'))
         else:
             viewData = {}
             viewData["title"] = "Create product"
             viewData["form"] = form
             return render(request, self.template_name, viewData)
+        
+class ProductSuccessView(TemplateView):
+    template_name = 'products/success.html'
+    def get(self, request):
+        viewData = {}
+        viewData["title"] = "Created Product"
+        return render(request, self.template_name, viewData)
         
 class ContactPageView(TemplateView):
     template_name = 'pages/contacts.html'

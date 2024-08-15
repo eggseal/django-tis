@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+<!--  -->
+{% block title %} {{title}} {% endblock %}
+<!--  -->
+{% block header_title %} {{subtitle}} {% endblock %}
+<!--  -->
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="alert alert-success text-center">
+        <h1>Created product successfully!</h1>
+      </div>
+      <a href="{% url 'products' %}" class="btn btn-primary">Back to Products</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
