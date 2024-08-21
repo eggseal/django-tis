@@ -1,0 +1,16 @@
+{% extends 'pages/base.html' %}
+<!--  -->
+{% block title %} {{title}} {% endblock %}
+<!--  -->
+{% block header_title %} {{subtitle}} {% endblock %}
+<!--  -->
+{% block content %}
+<ul>
+  <li>
+    <b>E-mail:</b>
+    <a href="mailto:{{ email }}">{{ email }}</a>
+  </li>
+  <li><b>Address:</b> {{ address }}</li>
+  <li><b>Phone:</b> <a href="tel:{{ phone }}">{{ phone }}</a></li>
+</ul>
+{% endblock %}
